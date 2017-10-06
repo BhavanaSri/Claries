@@ -12,24 +12,24 @@
 
 </head>
 <body>
-<nav id="navbar_red"class="navbar.navbar_inverse navbar_static_top"role="navigation">
-</nav>
+<nav id="navbar-red"class="navbar-inverse navbar-static-top"role="navigation">
+
 <div class="container">
-<ul class="nav navbar_nav">
-<button type="button" class="navbar_toggle collapsed" data_toggle="collapse" data_target="bs_example_nav">
-<span class="icon_bar"></span>span>
-<span class="icon_bar"></span>span>
-<span class="icon_bar"></span>span>
+<ul class="nav navbar-nav">
+<button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target="#bs-example-nav">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
 </button>
 </ul>
 </div>
-<div class="collapse navbar_collapse"id="bs_example_nav">
-<ul class="nav navbar_nav">
+<div class="collapse navbar-collapse"id="bs-example-nav">
+<ul class="nav navbar-nav">
 <li><a href="#">home</a></li>
 <li><a href="#">register</a></li>
 <li><a href="#"><i class="fa fa-sign-in" aira-hidden="true"></i>login</a></li>
 <li><a href="#">product category</a></li>
 </ul>
-</div>
+</div></nav>
 </body>
 </html>
