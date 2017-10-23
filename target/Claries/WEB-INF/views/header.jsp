@@ -25,10 +25,10 @@
 </div>
 <div class="collapse navbar-collapse"id="bs-example-nav">
 <ul class="nav navbar-nav">
-<li><a href="#">home</a></li>
-<li><a href="#">register</a></li>
-<li><a href="#"><i class="fa fa-sign-in" aira-hidden="true"></i>login</a></li>
-<li><a href="#">product category</a></li>
+<li><a href="home">home</a></li>
+<li><a href="Register">register</a></li>
+<li><a href="Login"><i class="fa fa-sign-in" aira-hidden="true"></i>login</a></li>
+<li><a href="Category">category</a></li>
 </ul>
 </div></nav>
 </body>
