@@ -8,7 +8,7 @@
   			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   			
-  			<title>Green-Avenue</title>
+  			<title>CLARIES</title>
 		</head>
 
 	<body>
@@ -31,7 +31,7 @@
 			</div>
 		
 			<div class="collapse navbar-collapse"id=bs-example-nav>
-			<a class="navbar-brand" href="#">Green-Avenue</a>
+			<a class="navbar-brand" href="#">CLARIES</a>
 			
 				<ul class="nav navbar-nav navbar-right">
 					

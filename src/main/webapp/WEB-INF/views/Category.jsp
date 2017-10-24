@@ -53,7 +53,7 @@
 	</tr>
 	
 	<c:forEach items="${categoryList}" var="category">
-		<tr bgcolor="pink">
+		<tr bgcolor="red">
 			<td>${category.catId}</td>
 			<td>${category.catName}</td>
 			<td>${category.catDesc}</td>

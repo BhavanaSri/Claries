@@ -40,8 +40,7 @@ public class IndexController
 		public String createUser(@ModelAttribute("user") User user)
 		{
 		 
-			user.setRole("ROLE_USER");
-			user.setEnabled(true);
+			
 			userDAO.saveUser(user);
 			return "index";
 		}

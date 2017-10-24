@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.dao.CategoryDAO;
 import com.spring.model.Category;
@@ -30,17 +31,15 @@ public class CategoryController
     {
         categoryDAO.addCategory(category);
          
-        List<Category> listCategory=categoryDAO.retrieveCategory();
-        m.addAttribute("categoryList",listCategory);
+       
          
-        return "Category";
+        return "redirect:category";
     }
      
     @RequestMapping(value="category",method=RequestMethod.GET)
-    public String showCategory(Model m)
+    public String showCategory(@ModelAttribute("category")Category category,Model m)
     {
-        Category category=new Category();
-        m.addAttribute(category);
+       
          
         List<Category> listCategory=categoryDAO.retrieveCategory();
         m.addAttribute("categoryList",listCategory);
@@ -48,23 +47,20 @@ public class CategoryController
     }
      
     @RequestMapping(value="updateCategory/{catId}",method=RequestMethod.GET)
-    public String updateCategory(@PathVariable("catId") int catId,Model m)
+    public String updateCategory(@PathVariable("catId") int catId,Model m,RedirectAttributes attributes)
      {
         Category category=categoryDAO.getCategory(catId);
-        m.addAttribute(category);
+        //m.addAttribute(category);
          
-        List<Category> listCategory=categoryDAO.retrieveCategory();
-        m.addAttribute("categoryList",listCategory);
-        return "Category";
+        attributes.addFlashAttribute("category", this.categoryDAO.getCategory(catId));
+    	return "redirect:/category";
     }
      
     @RequestMapping(value="deleteCategory/{catId}",method=RequestMethod.GET)
-    public String deleteCategory(@PathVariable("catId")int catId,Model m)
+    public String deleteCategory(@PathVariable("catId")int catId,Model m,RedirectAttributes attributes)
     {
-        Category category=categoryDAO.getCategory(catId);
-        categoryDAO.deleteCategory(category);
-        List<Category> listCategory=categoryDAO.retrieveCategory();
-        m.addAttribute("categoryList",listCategory);
-        return "Category";
+    	m.addAttribute("category", categoryDAO.deleteCategory(catId));
+    	
+    	return "redirect:/category";
     }
 }

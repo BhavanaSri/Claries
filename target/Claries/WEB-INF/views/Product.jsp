@@ -1,104 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" isELIgnored="false"%>
+
+<%@ page language="java" import="com.spring.model.Product" contentType="text/html"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-    <head>
-    </head>
-    <body>
-        <h3>Welcome, Enter The Product Details</h3>
-        <form:form method="POST" action="saveProduct" modelAttribute="product" enctype="multipart/form-data" >
-             <table>
-                <tr>
-                    <td><form:label path="name">Product Name</form:label></td>
-                    <td><form:input path="name"/></td>
-                </tr>
-		<tr>
-                    <td><form:label path="description">Product Description</form:label></td>
-                    <td><form:input path="description"/></td>
-                </tr>
-		<tr>
-                    <td><form:label path="price">Product Price</form:label></td>
-                    <td><form:input path="price"/></td>
-                </tr>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>product</title>
+</head>
+<body>
+		<form:form action="InsertProduct" modelAttribute="product" enctype="multipart/form-data">
 
-                <tr>
-                    <td><form:label path="instock">Stock</form:label></td>
-                    <td><form:input path="instock"/></td>
-                </tr> 
-          <tr>
-						<td><form:label class="btn btn-default btn-block" path="supplier_id">Supplier</form:label></td>
-								
-							
-						<td><form:select path="supplier_id" class="form-control"
-								required="true">
-								<c:forEach items="${supplierList}" var="supplier">
-									<form:option class="form-control" value="${supplier.id}">${supplier.supplierName}</form:option>
-								</c:forEach>
-							</form:select></td>
-					</tr>
-					<tr>
-						<td><form:label class="btn btn-default btn-block" path="category_id">Category</form:label></td>
-						<td><form:select class="form-control" path="category_id"
-								required="true">
-								<c:forEach items="${categoryList}" var="category">
-									<form:option class="form-control" value="${category.id}">${category.categoryName}</form:option>
-								</c:forEach>
-							</form:select></td>
-					</tr>
-					<tr>
-					<td>Image:</td>
-					<td><form:input type="file"
-							class=" btn btn-default btn-block form-control" path="image"
-							required="" /></td>
-				</tr>
-     <tr>
-  <td><input type="submit" value="Submit"/></td>
-                </tr>
-            </table>
-        </form:form>
-        
-        
-        <div align="center">
-		<table class="table" style="width: 80%" border="1px">
-			<caption>Products</caption>
-			<thead>
-				<tr >
-					<th>Product Id</th>
-					<th>Product Name</th>
-					<th>Product Description</th>
-					<th>Product Price</th>
-					<th>Category ID</th>
-					<th>Supplier ID</th>
-					<th>Image</th>
-					<th>Edit</th>
-					<th>Delete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${productList}" var="product"	>
-					<tr >
-						<td align="center"><c:out value="${product.id}" />
-						<td ><c:out value="${product.name}" />
-						<td ><c:out value="${product.description}" />
-						<td ><c:out value="${product.price}" />
-						<td ><c:out value="${product.category_id}" />
-						<td ><c:out value="${product.supplier_id}" />
-						<td><div class="thumbnail">
-								<img height="100px" width="100px" alt="${product.id }"
-									src="<c:url value="/resources/images/${product.id }.jpg"></c:url>">
-							</div>
-						<td ><a href="addeditproduct/${product.id }"><img
-								alt="Edit" ></a>
-						<td i><a href="adddeleteproduct/${product.id }"><img
-								alt="Delete"> </a>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+<table align="center">
+	<tr>
+		<td colspan="2">Product Detail</td>
+	</tr>	
+	<tr>
+		<td>Product Name</td>
+		<td><form:input path="productName"/></td>
+	</tr>
+	<tr>
+		<td>Product Desc</td>
+		<td><form:textarea path="productDesc"/></td>
+	</tr>
+	<tr>
+		<td>Product Stock</td>
+		<td><form:input path="stock"/></td>
+	</tr>
+	<tr>
+		<td>Product Price</td>
+		<td><form:input path="price"/></td>
+	</tr>
+	<tr>
+		<td>Category</td>
+		<td>
+			<form:select path="catId">
+				<form:option value="0" label="---Select---"/>
+				<form:options items="${categoryList}"/>
+			</form:select>
+		</td>
+	</tr>
 
-	</div>
-        
-     
-    </body>
+	<tr>
+		<td>Supplier</td>
+		<td>
+			<form:select path="supplierId">
+				<form:option value="0" label="---Select---"/>
+				<form:options items="${supplierList}"/>
+			</form:select>
+		</td>
+	</tr>
+	<tr>
+		<td>Product Image</td>
+		<td><input type="file" name="file"/></td>
+	</tr> 
+	<tr>
+		<td colspan="2">
+			<center><input type="submit" value="Insert"/></center>
+		</td>
+	</tr>
+	
+</table>
+</form:form>
+
+</body>
 </html>
