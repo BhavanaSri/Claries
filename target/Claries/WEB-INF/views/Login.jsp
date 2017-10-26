@@ -2,7 +2,7 @@
 <html>
 <head>
 
-<title>Login Page - Fasion</title>
+<title>Login Page</title>
 </head>
 <body>
 

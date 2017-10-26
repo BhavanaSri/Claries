@@ -94,6 +94,7 @@
 					<td>Category</td>
 					<td>Supplier</td>
 					<td>Product Image</td>
+					<td>Action</td>
 				</tr>
 	
 	
@@ -107,6 +108,7 @@
 				<td>${product.catId}</td>
 				<td>${product.supplierId}</td>
 				<td>${product.image}</td>
+				
 				<td>
 			
 						<a href="<c:url value="deleteProduct/${product.productId}"/>">DELETE</a>
