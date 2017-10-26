@@ -7,21 +7,28 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>supplier</title>
 </head>
-	<body>
+	<body background="${pageContext.request.contextPath}/resources/images/Autumn-nature-backgrounds-wallpaper.jpg" >
+
 	   	<!-- <form action="AddSupplier" method="post">-->
 
 			<form:form action="AddSupplier" modelAttribute="supplier">
+<center>
 			<table align="center" cellspacing="2">
+
+
+<tr>
+		
+		
+		<form:input type="hidden" name="supId" path="supId" class="form-control" />
+		
+		
+	</tr>
+
 			<tr>
 				<td colspan="2">Supplier Module</td>
 			</tr>
 			
-			<tr>
-				<td>Supplier Id</td>
-				<!-- <td><input type="text" name="supId"/></td> -->
-				<td><form:input path="supId"/></td>
-			</tr>
-			
+		
 	
 			<tr>
 				<td>Supplier Name</td>
@@ -46,7 +53,9 @@
 				<center><input type="submit" value="Insert"/></center>
 			</td>
 		</tr>
+
 	</table>
+</center>
 	</form:form>
 
 <table cellspacing="2" align="center">

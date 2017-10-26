@@ -19,48 +19,58 @@ import com.spring.model.Category;
 
 
 @Controller
-public class CategoryController 
-{	
+public class CategoryController {
 	
+	@Autowired
+	CategoryDAO categoryDAO;
+	  
+	 
 	
-   @Autowired
-    CategoryDAO categoryDAO;
-     
-    @RequestMapping(value="AddCategory",method=RequestMethod.POST)
-    public String addCategory(@ModelAttribute("category")Category category,Model m)
-    {
-        categoryDAO.addCategory(category);
-         
-       
-         
-        return "redirect:category";
-    }
-     
-    @RequestMapping(value="category",method=RequestMethod.GET)
-    public String showCategory(@ModelAttribute("category")Category category,Model m)
-    {
-       
-         
-        List<Category> listCategory=categoryDAO.retrieveCategory();
-        m.addAttribute("categoryList",listCategory);
-        return "Category";
-    }
-     
-    @RequestMapping(value="updateCategory/{catId}",method=RequestMethod.GET)
-    public String updateCategory(@PathVariable("catId") int catId,Model m,RedirectAttributes attributes)
-     {
-        Category category=categoryDAO.getCategory(catId);
-        //m.addAttribute(category);
-         
-        attributes.addFlashAttribute("category", this.categoryDAO.getCategory(catId));
-    	return "redirect:/category";
-    }
-     
-    @RequestMapping(value="deleteCategory/{catId}",method=RequestMethod.GET)
-    public String deleteCategory(@PathVariable("catId")int catId,Model m,RedirectAttributes attributes)
-    {
-    	m.addAttribute("category", categoryDAO.deleteCategory(catId));
-    	
-    	return "redirect:/category";
-    }
+	    @RequestMapping(value="AddCategory",method=RequestMethod.POST)
+	 public String addCategory(@ModelAttribute("category")Category category,Model m)
+	    {
+
+	    	
+	    	categoryDAO.addCategory(category);
+	        
+	        return "redirect:/category";
+	    }
+	    
+	    
+		@RequestMapping(value="category",method=RequestMethod.GET)
+	    public String showCategory(@ModelAttribute("category")Category category,Model m)
+	    {
+	         
+	        List<Category> listCategory=categoryDAO.retrieveCategory();
+	        m.addAttribute("category", category);
+	        m.addAttribute("categoryList",listCategory);
+	        return "Category";
+	    }
+	    
+		/* @RequestMapping(value="/updateCategory/{catId}",method=RequestMethod.GET)
+		    public String updateCategory(@PathVariable("catId") int catId,Model m,RedirectAttributes attributes)
+		     {
+			 categoryDAO.updateCategory(catId);
+				return "redirect:/category";
+		    }*/
+	    
+		@RequestMapping(value="updateCategory/{catId}",method=RequestMethod.GET)
+		    public String updateCategory(@PathVariable("catId") int catId,Model m,RedirectAttributes attributes)
+		    {
+		        Category category=categoryDAO.getCategory(catId);
+		       // m.addAttribute(category);
+		         attributes.addFlashAttribute("category",category);
+		        List<Category> listCategory=categoryDAO.retrieveCategory();
+		        m.addAttribute("categoryList",listCategory);
+		        return "redirect:/category";
+		    }
+	    
+	    @RequestMapping(value="/deleteCategory/{catId}",method=RequestMethod.GET)
+	    public String deleteCategory(@PathVariable("catId")int catId,Model m,RedirectAttributes attributes)
+	    {	
+	    	categoryDAO.deleteCategory(catId);
+			return "redirect:/category";
+			
+	    }
+
 }

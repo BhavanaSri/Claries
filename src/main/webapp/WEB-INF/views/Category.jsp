@@ -7,23 +7,25 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Category Page</title>
 	</head>
-<body>
+<body background="${pageContext.request.contextPath}/resources/images/6361417590588817441286486481_landscape-4.jpg">
 
 		<!-- <form action="AddCategory" method="post">-->
 
 		<form:form action="AddCategory" modelAttribute="category">
+		
 		<table align="center" cellspacing="2">
+		
+		<tr>
+		
+		
+		<form:input type="hidden" name="catId" path="catId" class="form-control" />
+		
+		
+	</tr>
 		<tr>
 			<td colspan="2">Category Module</td>
 		</tr>
-		
-		<tr>
-			<td>Category ID</td>
-			<!-- <td><input type="text" name="catId"/></td> -->
-			<td><form:input path="catId"/></td>
-		</tr>
-	
-	
+			
 		<tr>
 			<td>Category Name</td>
 			<!-- <td><input type="text" name="catName"/></td> -->
@@ -53,7 +55,7 @@
 	</tr>
 	
 	<c:forEach items="${categoryList}" var="category">
-		<tr bgcolor="red">
+		<tr bgcolor="pink">
 			<td>${category.catId}</td>
 			<td>${category.catName}</td>
 			<td>${category.catDesc}</td>

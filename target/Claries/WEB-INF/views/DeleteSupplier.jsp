@@ -15,18 +15,18 @@
 	</tr>
 	<tr>
 		<td>Supplier ID</td>
-		<!--<td><input type="text" name="supId"/></td>-->
-		<td><form:input path="SupId"/></td>
+		<!--<td><input type="text" name="supplierId"/></td>-->
+		<td><form:input path="SupplierId"/></td>
 	</tr>
 	<tr>
 		<td>Supplier Name</td>
-		<!-- <td><input type="text" name="supName"/></td> -->
-		<td><form:input path="SupName"/></td>
+		<!-- <td><input type="text" name="supplirName"/></td> -->
+		<td><form:input path="SupplierName"/></td>
 	</tr>
 	<tr>
-		<td>Supplier Desc</td>
-		<!-- <td><input type="text" name="supDesc"/></td> -->
-		<td><form:input path="SupDesc"/></td>
+		<td>Supplier Address</td>
+		<!-- <td><input type="text" name="supplierAddress"/></td> -->
+		<td><form:input path="SupplierAddress"/></td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -46,12 +46,12 @@
 </tr>
 <c:forEach items="${supplierList}" var="supplier">
 	<tr bgcolor="brown">
-		<td>${supplier.supId}</td>
-		<td>${supplier.supName}</td>
-		<td>${supplier.supDesc}</td>
+		<td>${supplier.supplierId}</td>
+		<td>${supplier.supplierName}</td>
+		<td>${supplier.supplierAddress}</td>
 		<td>
-			<a href="<c:url value="deleteSupplier/${supplier.supId}"/>">DELETE</a>
-			<a href="<c:url value="updateSupplier/${supplier.supId}"/>">UPDATE</a>
+			<a href="<c:url value="deleteSupplier/${supplier.supplierId}"/>">DELETE</a>
+			<a href="<c:url value="updateSupplier/${supplier.suppliersId}"/>">UPDATE</a>
 		</td>
 	</tr>
 </c:forEach>
