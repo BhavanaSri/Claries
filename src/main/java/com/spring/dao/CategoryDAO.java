@@ -1,0 +1,14 @@
+package com.spring.dao;
+
+import java.util.List;
+
+import com.spring.model.Category;
+
+public interface CategoryDAO 
+{
+	public boolean addCategory(Category category);
+	public List<Category> retrieveCategory();
+	public Category deleteCategory(int category_id);
+	public Category getCategory(int catId);
+	public boolean updateCategory(Category category);
+}
