@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.dao.CartDAO;
@@ -88,6 +89,20 @@ public class CartController
 	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
 	  	return "redirect:/cart";
 	  }
+	  @RequestMapping("editCart/{cartId}")
+		public String editorder(@PathVariable("cartId") int cartid, @RequestParam("quantity") int q, HttpSession session) {
+		
+			//int userId = (Integer) session.getAttribute("userid");
+			Cart cart = cartDAO.editCartById(cartid);
+			Product p = productDAO.getProduct(cart.getProductId());
+			cart.setProductQuantity(q);
+			//cart.setProductPrice(q * p.getPrice());
+			cart.setSubTotal(q * p.getPrice());
+			cartDAO.saveProductToCart(cart);
+			session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
+			return "redirect:/cart";
+		}
+	    
 
 	
 

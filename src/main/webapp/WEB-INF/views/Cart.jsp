@@ -69,7 +69,12 @@
                         
                         <td class="col-sm-1 col-md-1" style="text-align: center">
                           
-                       <form> <input type="text" class="form-control" id="exampleInputEmail1" name="quantity" value="${cart.productQuantity }" >
+                       <td class="col-sm-1 col-md-1" style="text-align: center">
+                        <form action="editCart/${cart.cartId}">
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="quantity" value="${cart.productQuantity }" >
+                        
+                        </form>
+                        </td>
                         
                         </form>
                         </td>
