@@ -76,7 +76,18 @@ public class CartController
 		//	model.addAttribute("HideOthers", "true");
 			return "Cart";
 		}
+	  @RequestMapping("continue_shopping")
+	  public String continueshopping()
+	  {
+	  return "redirect:/";	
 
+	  }
+	  @RequestMapping(value="removeCart/{cartId}")
+	  public String deleteorder(@PathVariable("cartId") int id, HttpSession session) {
+	  	cartDAO.removeCartById(id);
+	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
+	  	return "redirect:/cart";
+	  }
 
 	
 
