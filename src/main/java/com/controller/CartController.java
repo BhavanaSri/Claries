@@ -45,7 +45,7 @@ public class CartController
 				cartDAO.saveProductToCart(item);
 				attributes.addFlashAttribute("ExistingMessage",  p.getProductName() +"is already exist");
 		
-				return "redirect:/";
+				return "redirect:/cart	";
 			} else {
 				Cart item = new Cart();
 				Product p = productDAO.getProduct(id);
@@ -57,7 +57,7 @@ public class CartController
 				item.setPrice(p.getPrice());
 				cartDAO.saveProductToCart(item);
 				attributes.addFlashAttribute("SuccessMessage", "Item"+p.getProductName()+" has been deleted Successfully");
-				return "redirect:/";
+				return "redirect:/cart";
 			}
 	    	
 	    }
@@ -65,8 +65,8 @@ public class CartController
 	  @RequestMapping("cart")
 		public String viewCart(Model model, HttpSession session) {
 	    	
-			//int userId = (Integer) session.getAttribute("userid");
-			model.addAttribute("CartList", cartDAO.listCart());
+			int userId = (Integer) session.getAttribute("userid");
+			model.addAttribute("CartList", cartDAO.listCartbyUserId(userId));
 			 if(cartDAO.cartsize((Integer) session.getAttribute("userid"))!=0){
 				
 				model.addAttribute("CartPrice", cartDAO.CartPrice((Integer) session.getAttribute("userid")));
@@ -77,19 +77,25 @@ public class CartController
 		//	model.addAttribute("HideOthers", "true");
 			return "Cart";
 		}
-	  @RequestMapping("continue_shopping")
-	  public String continueshopping()
-	  {
-	  return "redirect:/";	
 
-	  }
+
+	
 	  @RequestMapping(value="removeCart/{cartId}")
 	  public String deleteorder(@PathVariable("cartId") int id, HttpSession session) {
 	  	cartDAO.removeCartById(id);
 	  	session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
 	  	return "redirect:/cart";
 	  }
-	  @RequestMapping("editCart/{cartId}")
+	  
+	  @RequestMapping("continue_shopping")
+	  public String continueshopping()
+	  {
+	  return "redirect:/";	
+	  
+	  }
+	  
+
+		@RequestMapping("editCart/{cartId}")
 		public String editorder(@PathVariable("cartId") int cartid, @RequestParam("quantity") int q, HttpSession session) {
 		
 			//int userId = (Integer) session.getAttribute("userid");
@@ -102,8 +108,4 @@ public class CartController
 			session.setAttribute("cartsize", cartDAO.cartsize((Integer) session.getAttribute("userid")));
 			return "redirect:/cart";
 		}
-	    
-
-	
-
 }
