@@ -53,6 +53,8 @@ html { width: 100%; height:100%; overflow:hidden; }
 }
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
+
+
 input { 
 	width: 100%; 
 	margin-bottom: 10px; 
@@ -94,7 +96,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
         <button type="submit" class="btn btn-primary btn-block btn-large">Login</button>
     </form>
     <br>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- login bootsnipp -->
 <ins class="adsbygoogle"
      style="display:block"
@@ -103,6 +105,6 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
      data-ad-format="auto"></ins>
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+</script>  -->  
 
 </div>
