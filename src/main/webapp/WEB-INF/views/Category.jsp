@@ -30,7 +30,7 @@
 html { width: 100%; height:100%; overflow:hidden; }
   			
   			body { 
-    width: 50%;
+    width: 100%;
 	height:100%;
 	align:"center"
 	position:absolute;
@@ -47,10 +47,11 @@ html { width: 100%; height:100%; overflow:hidden; }
 }
 
 
-.button {background-color: #008CBA;} 
+.button {background-color: #008CBA;
+}
 
 input { 
-	width:50%; 
+	width:100%; 
 	margin-bottom: 10px; 
 	background: rgba(0,0,0,0.3);
 	border: none;
@@ -79,74 +80,50 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 		<form:form action="AddCategory" modelAttribute="category">
 		
-		<table align="center" cellspacing="9">
+		<table align="center" cellspacing="2">
 		
-	<!-- <tr>
+		<tr>
 		
 		
 		<form:input type="hidden" name="catId" path="catId" class="form-control" />
 		
 		
-	</tr>
+<!--  	</tr>
 		<tr>
-			<td colspan="2">Category Module</td>
-		</tr>
+			<td colspan="2">Category </td>
+		</tr>-->
+	cc
+		<br>
+			
 		<tr>
-		<td>Category ID</td>
-		<td><input type="text" name="catId"/></td>
-	 	<td><form:input path="catId"/></td>
-	</tr>-->
-			 
-		<tr>
-	<!-- <td>Category Name</td>
-			<!-- <td><input type="text" name="catName"/></td>
+			<td><font color="white">Category Name</font></td>
+			<!-- <td><input type="text" name="catName"/></td> -->
 			<td><form:input path="catName"/></td>
 		</tr>
 	
 		<tr>
-			<td>Category Desc</td>
+			<td><font color="white">Category Desc</font></td>
 			<!-- <td><input type="text" name="catDesc"/></td> -->
-		 <!-- 	<td><form:input path="catDesc"/></td>
+			<td><form:input path="catDesc"/></td>
 		</tr>
-	 
+	
 		<tr>
 			<td colspan="2">
-				<center><input type="submit" value="Insert"/></center>
+				<center><button type="submit">Insert</button></center>
 			</td>
-		</tr>  -->		
-	
-<div class="category">
- <center>  <h1>Category</h1>
-    <form method="post" align="center">
-    	<input type="text" align="center" name="catName"" placeholder="Name" required="required" size="35" />
-        <input type="text" align="center" name="catDesc" placeholder="Descripton" required="required" size="35"/>
-        <center><button type="submit">Insert</button></center>
-    </form> 	</center> 
-    </table> 
-   
- <!--  <head>
-   <style> 
-  .category { 
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width:300px;
-	height:300px;
-} 
-.category h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px;  }
-   
-   </style>
-   </head>  --> 
-   
+		</tr>
+	</table>
+	</form:form>
+
   
 
 
-</div>
-	</form:form>
+ 
+ 
+
 	<br>
 	
-	<table cellspacing="6" align="center" class="footerposition"  border="1" bottom="0px" >
+	<table cellspacing="10" align="center" class="footerposition"  border="2" bottom="0px" >
  
 
 	<tr bgcolor="blue">
@@ -167,8 +144,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
         <span><strong>Delete</strong></span>            
     </a>
-			<!--<a href="<c:url value="updateCategory/${category.catId}"/>">UPDATE</a>  -->	
-			
+			<!-- <a href="<c:url value="updateCategory/${category.catId}"/>">UPDATE</a>   -->
 			
 			 <a href="<c:url value="updateCategory/${category.catId}"/>" class="btn btn-primary a-btn-slide-text">
        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
