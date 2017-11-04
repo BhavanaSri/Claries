@@ -27,17 +27,17 @@
  <div class="carousel-inner">
    <div class="item active">
      <img class="img-rounded" class="img-responsive center-block"
-     src="resources/image1.jpg/" style="width:100%">
+     src="resources/cake12.jpg/" style="width:100%">
    </div>
 
    <div class="item">
    <img class="img-rounded" class="img-responsive center-block"
-     src="resources/image2.jpg/" style="width:100%">
+     src="resources/cake2.jpg/" style="width:100%">
    </div>
 
    <div class="item">
    <img class="img-rounded" class="img-responsive center-block"
-     src="resources/image3.jpg/" style="width:100%">
+     src="resources/cake113.jpg/" style="width:100%">
    </div>
 
  </div>

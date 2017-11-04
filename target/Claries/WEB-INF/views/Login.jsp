@@ -53,6 +53,8 @@ html { width: 100%; height:100%; overflow:hidden; }
 }
 .login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
+
+
 input { 
 	width: 100%; 
 	margin-bottom: 10px; 

@@ -27,7 +27,7 @@
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html { width: 100%; height:100%; overflow:hidden; }
+html { width: 100%; height:100%;  }
   			
   			body { 
     width: 100%;
@@ -93,6 +93,8 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 			<td colspan="2">Category </td>
 		</tr>-->
 	cc
+		<br>
+		<h1 align="center"><font color="white">Category</font></h1>
 		<br>
 			
 		<tr>

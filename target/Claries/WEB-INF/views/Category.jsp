@@ -13,7 +13,7 @@
   			<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   			
   			<title>Category</title>
-  			<style type="text/css">
+  			<style type="text/css" align="center">
   			@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 .btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
 .btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
@@ -27,11 +27,15 @@
 
 * { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
 
-html { width: 100%; height:100%; overflow:hidden; }
+html { width: 100%; height:100%;  }
   			
   			body { 
     width: 100%;
 	height:100%;
+	align:"center"
+	position:absolute;
+	left: 50%;
+	
 	font-family: 'Open Sans', sans-serif;
 	background: #092756;
 	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
@@ -43,7 +47,8 @@ html { width: 100%; height:100%; overflow:hidden; }
 }
 
 
-
+.button {background-color: #008CBA;
+}
 
 input { 
 	width:100%; 
@@ -75,69 +80,82 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 		<form:form action="AddCategory" modelAttribute="category">
 		
-		<table align="center" cellspacing="9">
+		<table align="center" cellspacing="2">
 		
-	<!-- <tr>
+		<tr>
 		
 		
 		<form:input type="hidden" name="catId" path="catId" class="form-control" />
 		
 		
-	</tr>
+<!--  	</tr>
 		<tr>
-			<td colspan="2">Category Module</td>
-		</tr>
+			<td colspan="2">Category </td>
+		</tr>-->
+	cc
+		<br>
+		<h1 align="center"><font color="white">Supplier</font></h1>
+		<br>
+			
 		<tr>
-		<td>Category ID</td>
-		<td><input type="text" name="catId"/></td>
-	 	<td><form:input path="catId"/></td>
-	</tr>-->
-			 
-		<tr>
-	<!-- <td>Category Name</td>
-			<!-- <td><input type="text" name="catName"/></td>
+			<td><font color="white">Category Name</font></td>
+			<!-- <td><input type="text" name="catName"/></td> -->
 			<td><form:input path="catName"/></td>
 		</tr>
 	
 		<tr>
-			<td>Category Desc</td>
+			<td><font color="white">Category Desc</font></td>
 			<!-- <td><input type="text" name="catDesc"/></td> -->
-		 <!-- 	<td><form:input path="catDesc"/></td>
+			<td><form:input path="catDesc"/></td>
 		</tr>
-	 
+	
 		<tr>
 			<td colspan="2">
-				<center><input type="submit" value="Insert"/></center>
+				<center><button type="submit">Insert</button></center>
 			</td>
-		</tr>  -->		
-	
-<div class="category">
- <center>  <h1>Category</h1>
-    <form method="post" align="center">
-    	<input type="text" align="center" name="catName"" placeholder="Name" required="required" size="35" />
-        <input type="text" align="center" name="catDesc" placeholder="Descripton" required="required" size="35"/>
-        <button type="submit" class="btn btn-primary btn-block btn-large" width:25%>Insert</button>
-    </form> 	</center> 
-    </table> 
-   
-   <head>
-   <style>
-   .category { 
-	position: absolute;
-	top: 30%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width:300px;
-	height:300px;
-}
-.category h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px;  }
-   
-   </style>
-   </head> 
-   
+		</tr>
+	</table>
+	</form:form>
+
   
 
 
-</div>
-	</form:form>
+ 
+ 
+
 	<br>
+	
+	<table cellspacing="10" align="center" class="footerposition"  border="2" bottom="0px" >
+ 
+
+	<tr bgcolor="blue">
+	<!-- <td>Category ID</td> -->	
+		<td>Category Name</td>
+		<td>Category Description</td>
+		<td>Operation</td>
+	</tr>
+	
+	<c:forEach items="${categoryList}" var="category">
+		<tr bgcolor="pink">
+		<!--<td>${category.catId}</td>  -->	
+			<td>${category.catName}</td>
+			<td>${category.catDesc}</td>
+			<td>
+				<!-- <a href="<c:url value="deleteCategory/${category.catId}"/>">DELETE</a>/ -->
+				 <a href="<c:url value="deleteCategory/${category.catId}"/>" class="btn btn-primary a-btn-slide-text">
+       <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        <span><strong>Delete</strong></span>            
+    </a>
+			<!-- <a href="<c:url value="updateCategory/${category.catId}"/>">UPDATE</a>   -->
+			
+			 <a href="<c:url value="updateCategory/${category.catId}"/>" class="btn btn-primary a-btn-slide-text">
+       <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+        <span><strong>UPDATE</strong></span>            
+    </a>
+			</td>
+		</tr>
+	</c:forEach>
+
+</table>
+</body>
+</html>
