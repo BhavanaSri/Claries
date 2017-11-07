@@ -36,7 +36,7 @@
 			</div>
 		
 			<div class="collapse navbar-collapse"id=bs-example-nav>
-			<a class="navbar-brand" href="home">Green-Avenue</a>
+			<a class="navbar-brand" href="home">Claries</a>
 			
 				<ul class="nav navbar-nav navbar-right">
 					
@@ -109,7 +109,7 @@
 			<tr>
 			 <td class="col-sm-8 col-md-6">
 			<div class="media">
-			 <a class="thumbnail pull-left" href=""><img class="media-object" src="/GreenAvenueFrontEnd/myImage/imageDisplay?id=${cart.productId}" class="img-thumbnail" width="72px" height="72px"/></a>
+			 <a class="thumbnail pull-left" href=""><img class="media-object" src="/Claries/myImage/imageDisplay?id=${cart.productId}" class="img-thumbnail" width="72px" height="72px"/></a>
 					
 			<div class="media-body">
 			<c:forEach items="${productList}" var="product">	

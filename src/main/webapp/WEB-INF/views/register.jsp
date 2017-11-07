@@ -100,27 +100,32 @@ label.label-floatlabel {
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			                           <input type="username" name="username" id="username" class="form-control input-sm" placeholder="User Name">
+			                           <form:errors path="username" cssClass="error"/>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<input type="contact" name="contact" id="contact" class="form-control input-sm" placeholder="Contact">
+			    						<form:errors path="contact" cssClass="error"/>
 			    					</div>
 			    				</div>
 			    			</div>
 
 			    			<div class="form-group">
 			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+			    				<form:errors path="email" cssClass="error"/>
 			    			</div>
 			    				<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+			    						<form:errors path="password" cssClass="error"/>
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
 			    						<input type="text" name="address" id="address" class="form-control input-sm" placeholder="Address">
+			    						<form:errors path="address" cssClass="error"/>
 			    					</div>
 			    				</div>
 			    			</div>

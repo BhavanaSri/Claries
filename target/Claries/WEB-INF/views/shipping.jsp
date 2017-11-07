@@ -36,7 +36,7 @@
 			</div>
 		
 			<div class="collapse navbar-collapse"id=bs-example-nav>
-			<a class="navbar-brand" href="home">Green-Avenue</a>
+			<a class="navbar-brand" href="home">Claries</a>
 			
 				<ul class="nav navbar-nav navbar-right">
 					
