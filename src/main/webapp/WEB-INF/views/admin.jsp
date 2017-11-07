@@ -80,7 +80,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
  </ol>
 
  <!-- Wrapper for slides -->
- <div class="carousel-inner">
+ <!-- <div class="carousel-inner">
    <div class="item active">
      <img class="img-rounded" class="img-responsive center-block"
      src="resources/cake2.jpg/" style="width:100%">
@@ -89,7 +89,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
    <div class="item">
    <img class="img-rounded" class="img-responsive center-block"
      src="resources/cake12.jpg/" style="width:100%">
-   </div>
+   </div> -->
 
    <div class="item">
    <img class="img-rounded" class="img-responsive center-block"
@@ -108,6 +108,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
    <span class="sr-only">Next</span>
  </a>
 </div>
+
 
 
 

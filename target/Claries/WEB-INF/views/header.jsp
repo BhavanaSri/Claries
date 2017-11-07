@@ -35,8 +35,8 @@
 			</div>
 		
 			<div class="collapse navbar-collapse" id="bs-example-nav">
-   <ul class="nav navbar-nav ">
-		<li><a href="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li></ul>
+ <!--   <ul class="nav navbar-nav ">
+	 	<li><a href="home"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li></ul>-->
 		
 		<ul class="nav navbar-nav navbar-right">
 		

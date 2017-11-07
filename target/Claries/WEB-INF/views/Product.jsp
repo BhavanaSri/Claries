@@ -183,12 +183,12 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 						<a href="<c:url value="updateProduct/${product.productId}"/>">UPDATE</a>-->
 						
 						
-						<a href="<c:url value="deleteProducty/${product.productId}"/>" class="btn btn-primary a-btn-slide-text">
+						<a href="<c:url value="deleteProduct/${product.productId}"/>" class="btn btn-primary a-btn-slide-text">
        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
         <span><strong>DELETE</strong></span>            
     </a>
 						
-						<a href="<c:url value="updateProducty/${product.productId}"/>" class="btn btn-primary a-btn-slide-text">
+						<a href="<c:url value="updateProduct/${product.productId}"/>" class="btn btn-primary a-btn-slide-text">
        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
         <span><strong>UPDATE</strong></span>            
     </a>

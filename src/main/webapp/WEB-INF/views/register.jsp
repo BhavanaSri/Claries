@@ -41,12 +41,10 @@ label.label-floatlabel {
 </style>
 	</head>
 	<body>
-			<!-- <jsp:include page="header.jsp"></jsp:include> -->
+		
 		<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-    <head>
-    </head>
-    <body>
+   
     <center>
       <!-- <h3>Welcome, Enter The User Details</h3>
         <form:form method="POST" action="saveUser" modelAttribute="user">
