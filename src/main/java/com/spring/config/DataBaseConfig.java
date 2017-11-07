@@ -12,6 +12,8 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.spring.dao.AddressDAO;
+import com.spring.dao.AddressDAOImpl;
 import com.spring.dao.CartDAO;
 import com.spring.dao.UserDAO;
 import com.spring.dao.CartDAOImpl;
@@ -83,7 +85,13 @@ public class DataBaseConfig
 
 		return new CartDAOImpl(sessionFactory);
 	}
-	
+	@Autowired
+	@Bean(name = "addressDAO")
+	public AddressDAO getAddressDAO(SessionFactory sessionFactory)
+	{
+
+		return new AddressDAOImpl(sessionFactory);
+	}
 	
 
 	}

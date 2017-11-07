@@ -1,42 +1,55 @@
 package com.spring.model;
 
-import javax.persistence.*;
+import java.io.Serializable;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
-@Component
-public class Category 
+public class Category implements Serializable
 {
-    @Id
-    @GeneratedValue
-    int catId;
-     
-    String catName,catDesc;
- 
-    public int getCatId() {
-        return catId;
-    }
- 
-    public void setCatId(int catId) {
-        this.catId = catId;
-    }
- 
-    public String getCatName() {
-        return catName;
-    }
- 
-    public void setCatName(String catName) {
-        this.catName = catName;
-    }
- 
-    public String getCatDesc() {
-        return catDesc;
-    }
- 
-    public void setCatDesc(String catDesc) {
-        this.catDesc = catDesc;
-    }
-     
-     
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue
+	int catId;
+
+	@NotNull
+	@Size(min=5, max=15)
+	private String catName;
+
+	@NotNull
+	@Size(min=10, max=30)
+	private String catDesc;
+
+	public int getCatId() {
+		return catId;
+	}
+
+	public void setCatId(int catId) {
+		this.catId = catId;
+	}
+
+	public String getCatName() {
+		return catName;
+	}
+
+	public void setCatName(String catName) {
+		this.catName = catName;
+	}
+
+	public String getCatDesc() {
+		return catDesc;
+	}
+
+	public void setCatDesc(String catDesc) {
+		this.catDesc = catDesc;
+	}
+	
+	
 }

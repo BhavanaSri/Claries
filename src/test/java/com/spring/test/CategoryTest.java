@@ -21,7 +21,7 @@ public class CategoryTest
     public static void initialize()
     {
         AnnotationConfigApplicationContext configApplnContext=new AnnotationConfigApplicationContext();
-        configApplnContext.scan("com.niit");
+        configApplnContext.scan("com.spring");
         configApplnContext.refresh();
          
         //SessionFactory sessionFactory=(SessionFactory)configApplnContext.getBean("DBConfig.class");

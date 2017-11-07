@@ -1,17 +1,18 @@
 package com.spring.test;
-
+ 
 import static org.junit.Assert.*;
-
-
+ 
 import java.util.List;
+
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.spring.config.DataBaseConfig;
 import com.spring.dao.SupplierDAO;
 import com.spring.model.Supplier;
+
+import jdk.nashorn.internal.ir.annotations.Ignore;
 
 @Ignore
 public class SupplierTest 
@@ -22,11 +23,9 @@ public class SupplierTest
 	public static void initialize()
 	{
 		@SuppressWarnings("resource")
-		AnnotationConfigWebApplicationContext configApplnContext=new AnnotationConfigWebApplicationContext();
-		configApplnContext.scan("com.spring");
-		configApplnContext.register(DataBaseConfig.class);
-		configApplnContext.refresh();
-		
+		AnnotationConfigApplicationContext configApplnContext=new AnnotationConfigApplicationContext();
+        configApplnContext.scan("com.spring");
+        configApplnContext.refresh();
 		//SessionFactory sessionFactory=(SessionFactory)configApplnContext.getBean("DBConfig.class");
 		
 		supplierDAO=(SupplierDAO)configApplnContext.getBean("supplierDAO");
