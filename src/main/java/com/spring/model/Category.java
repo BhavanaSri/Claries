@@ -19,12 +19,10 @@ public class Category implements Serializable
 	@GeneratedValue
 	int catId;
 
-	@NotNull
-	@Size(min=5, max=15)
+	
 	private String catName;
 
-	@NotNull
-	@Size(min=10, max=30)
+	
 	private String catDesc;
 
 	public int getCatId() {
